@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        async function analyzeSentiment() {
+            let text = document.getElementById('post_text').value;
+            let response = await fetch('/predict_sentiment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({text: text}),
+            });
+            let data = await response.json();
+            document.getElementById('sentiment_result').innerHTML = `Sentiment: ${data.sentiment}`;
+        }
+
+        async function fetchSentimentData() {
+            let response = await fetch('/api/sentiment_trends');
+            let data = await response.json();
+
+            let ctx = document.getElementById('sentimentChart').getContext('2d');
+            let chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.timestamps,
+                    datasets: [{
+                        label: 'Sentiment (Positive)',
+                        data: data.positive_sentiments,
+                        borderColor: 'green',
+                        fill: false
+                    },
+                    {
+                        label: 'Sentiment (Negative)',
+                        data: data.negative_sentiments,
+                        borderColor: 'red',
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { 
+                            title: { display: true, text: 'Time' }
+                        },
+                        y: { 
+                            title: { display: true, text: 'Sentiment Count' }
+                        }
+                    }
+                }
+            });
+        }
+        window.onload = fetchSentimentData;
+    </script>
+</head>
+<body>
+    <h1>Social Media Sentiment Analysis</h1>
+    <h2>Analyze your post's sentiment</h2>
+    <textarea id="post_text" placeholder="Write your post here..."></textarea><br><br>
+    <button onclick="analyzeSentiment()">Analyze Sentiment</button>
+    <p id="sentiment_result"></p>
+    
+    <h2>Sentiment Trends</h2>
+    <canvas id="sentimentChart" width="400" height="200"></canvas>
+</body>
+</html>
