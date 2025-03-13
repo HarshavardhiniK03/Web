@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshavardhini K | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+        /* Navbar */
+        nav {
+            background: #007bff;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background: white;
+            color: #007bff;
+            border-radius: 5px;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .hero .btn {
+            display: inline-block;
+            background: white;
+            color: #007bff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .hero .btn:hover {
+            background: #0056b3;
+            color: white;
+        }
+        /* Sections */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+        }
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #007bff;
+            border-bottom: 3px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .skill {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .project {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+        }
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Harshavardhini K</h1>
+        <p>Data Scientist | MERN Stack Developer | AI Enthusiast</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate Data Science graduate with expertise in Python, Machine Learning, and Full Stack Development. I love solving problems and building innovative solutions.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">React.js</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Deep Learning</span>
+                <span class="skill">Data Visualization</span>
+                <span class="skill">Big Data Analytics</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <p><strong>🔹 Anomaly Detection in Network Traffic</strong></p>
+                    <p>Used deep learning techniques to identify cybersecurity threats.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project">
+                    <p><strong>🔹 TREND SCRIBE – YouTube Trend Analysis</strong></p>
+                    <p>Analyzed trends, sentiment, and engagement using AI.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project">
+                    <p><strong>🔹 English-to-French Translation (Seq2Seq)</strong></p>
+                    <p>Built an NLP model using Seq2Seq with attention mechanism for translation tasks.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <p>📧 Email: <a href="mailto:harshavardhini.email@example.com">harshavardhini.email@example.com</a></p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/harshavardhini" target="_blank">linkedin.com/in/harshavardhini</a></p>
+        </section>
+
+    </div>
+
+</body>
+</html>
